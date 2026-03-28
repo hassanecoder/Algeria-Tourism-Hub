@@ -1,15 +1,22 @@
 openapi: 3.1.0
 info:
-  # Do not change the title, if the title changes, the import paths will be broken
   title: Api
   version: 0.1.0
-  description: API specification
+  description: Algeria Tourism API
 servers:
   - url: /api
     description: Base API path
 tags:
   - name: health
     description: Health operations
+  - name: destinations
+    description: Tourist destinations
+  - name: experiences
+    description: Travel experiences
+  - name: regions
+    description: Algerian regions
+  - name: inquiries
+    description: Contact inquiries
 paths:
   /healthz:
     get:
@@ -24,6 +31,112 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+
+  /destinations:
+    get:
+      operationId: getDestinations
+      tags: [destinations]
+      summary: Get all destinations
+      parameters:
+        - name: region
+          in: query
+          schema:
+            type: string
+        - name: category
+          in: query
+          schema:
+            type: string
+        - name: featured
+          in: query
+          schema:
+            type: boolean
+      responses:
+        "200":
+          description: List of destinations
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Destination"
+
+  /destinations/{id}:
+    get:
+      operationId: getDestination
+      tags: [destinations]
+      summary: Get a single destination
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Destination detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Destination"
+        "404":
+          description: Not found
+
+  /experiences:
+    get:
+      operationId: getExperiences
+      tags: [experiences]
+      summary: Get all experiences
+      parameters:
+        - name: category
+          in: query
+          schema:
+            type: string
+      responses:
+        "200":
+          description: List of experiences
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Experience"
+
+  /regions:
+    get:
+      operationId: getRegions
+      tags: [regions]
+      summary: Get all regions
+      responses:
+        "200":
+          description: List of Algerian regions
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Region"
+
+  /inquiries:
+    post:
+      operationId: createInquiry
+      tags: [inquiries]
+      summary: Submit a travel inquiry
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateInquiry"
+      responses:
+        "201":
+          description: Inquiry created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Inquiry"
+        "400":
+          description: Validation error
+
 components:
   schemas:
     HealthStatus:
@@ -34,3 +147,189 @@ components:
       required:
         - status
 
+    Destination:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        slug:
+          type: string
+        region:
+          type: string
+        category:
+          type: string
+        description:
+          type: string
+        shortDescription:
+          type: string
+        imageUrl:
+          type: string
+        highlights:
+          type: array
+          items:
+            type: string
+        bestTimeToVisit:
+          type: string
+        difficulty:
+          type: string
+        duration:
+          type: string
+        featured:
+          type: boolean
+        rating:
+          type: number
+        reviewCount:
+          type: integer
+        coordinates:
+          $ref: "#/components/schemas/Coordinates"
+      required:
+        - id
+        - name
+        - slug
+        - region
+        - category
+        - description
+        - shortDescription
+        - imageUrl
+        - highlights
+        - bestTimeToVisit
+        - featured
+        - rating
+        - reviewCount
+
+    Experience:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        category:
+          type: string
+        description:
+          type: string
+        imageUrl:
+          type: string
+        duration:
+          type: string
+        difficulty:
+          type: string
+        price:
+          type: string
+        highlights:
+          type: array
+          items:
+            type: string
+        included:
+          type: array
+          items:
+            type: string
+        destinationId:
+          type: integer
+      required:
+        - id
+        - title
+        - category
+        - description
+        - imageUrl
+        - duration
+        - price
+        - highlights
+
+    Region:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        slug:
+          type: string
+        description:
+          type: string
+        imageUrl:
+          type: string
+        destinationCount:
+          type: integer
+        highlights:
+          type: array
+          items:
+            type: string
+        climate:
+          type: string
+      required:
+        - id
+        - name
+        - slug
+        - description
+        - imageUrl
+        - destinationCount
+        - highlights
+        - climate
+
+    Coordinates:
+      type: object
+      properties:
+        lat:
+          type: number
+        lng:
+          type: number
+      required:
+        - lat
+        - lng
+
+    CreateInquiry:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 2
+        email:
+          type: string
+          format: email
+        phone:
+          type: string
+        destination:
+          type: string
+        travelDate:
+          type: string
+        groupSize:
+          type: integer
+          minimum: 1
+        message:
+          type: string
+          minLength: 10
+      required:
+        - name
+        - email
+        - message
+
+    Inquiry:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+        destination:
+          type: string
+        travelDate:
+          type: string
+        groupSize:
+          type: integer
+        message:
+          type: string
+        createdAt:
+          type: string
+      required:
+        - id
+        - name
+        - email
+        - message
+        - createdAt

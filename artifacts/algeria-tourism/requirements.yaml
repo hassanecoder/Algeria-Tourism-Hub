@@ -1,0 +1,25 @@
+packages:
+  "framer-motion": "For page transitions and scroll-triggered animations to give a premium feel"
+  "react-hook-form": "For form state management on the contact page"
+  "@hookform/resolvers": "For integrating Zod validation with react-hook-form"
+  "clsx": "For conditional class name merging"
+  "tailwind-merge": "For merging tailwind classes safely"
+  "lucide-react": "For UI icons"
+
+images:
+  - path: "artifacts/algeria-tourism/public/images/hero-sahara.png"
+    description: "Breathtaking panoramic view of Sahara desert sand dunes at golden hour sunset, warm earthy tones, cinematic lighting, highly detailed, photorealistic."
+    aspect_ratio: "16:9"
+  - path: "artifacts/algeria-tourism/public/images/pattern-zellige.png"
+    description: "Elegant subtle Algerian Zellige tile geometric pattern, warm terracotta and gold tones on a light cream background, seamless texture, faded."
+    aspect_ratio: "1:1"
+  - path: "artifacts/algeria-tourism/public/images/about-culture.png"
+    description: "Beautiful traditional Algerian tea set with mint tea and dates on an ornate brass tray, warm lighting, rich colors, shallow depth of field."
+    aspect_ratio: "16:9"
+  - path: "artifacts/algeria-tourism/public/images/hero-algiers.png"
+    description: "Beautiful view of Algiers the white city from the bay, white buildings cascading down green hills to the blue Mediterranean sea, sunny day."
+    aspect_ratio: "16:9"
+
+notes:
+  - Using generated Orval hooks from @workspace/api-client-react
+  - Assuming UI components from shadcn are available in @/components/ui/
