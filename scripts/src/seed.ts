@@ -6,12 +6,22 @@ import {
 } from "@workspace/db/schema";
 
 async function seed() {
-  console.log("Seeding Algeria Tourism database...");
+  const seedMode = process.env.SEED_MODE === "bootstrap" ? "bootstrap" : "reset";
+  console.log(`Seeding Algeria Tourism database in ${seedMode} mode...`);
 
-  // Clear existing data
-  await db.delete(experiencesTable);
-  await db.delete(destinationsTable);
-  await db.delete(regionsTable);
+  if (seedMode === "bootstrap") {
+    const existing = await db.select().from(destinationsTable).limit(1);
+    if (existing.length > 0) {
+      console.log("Bootstrap seed skipped; destinations already present");
+      return;
+    }
+  }
+
+  if (seedMode === "reset") {
+    await db.delete(experiencesTable);
+    await db.delete(destinationsTable);
+    await db.delete(regionsTable);
+  }
 
   // Seed Regions
   const regions = await db
