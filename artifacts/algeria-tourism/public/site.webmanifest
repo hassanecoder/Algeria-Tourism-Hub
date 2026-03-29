@@ -1,0 +1,21 @@
+{
+  "name": "Discover Algeria",
+  "short_name": "Algeria Tourism",
+  "description": "Explore Algeria's breathtaking destinations. From Sahara desert tours to Mediterranean coastlines, discover travel guides, attractions, cultural experiences, and hotel booking across Algeria.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#D97706",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/apple-touch-icon.svg",
+      "sizes": "180x180",
+      "type": "image/svg+xml"
+    }
+  ]
+}
