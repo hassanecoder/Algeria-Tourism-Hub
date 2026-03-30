@@ -17,7 +17,7 @@ export default function DestinationDetail() {
     name: "Tassili n'Ajjer",
     region: "Sahara",
     category: "Nature & History",
-    imageUrl: "https://images.unsplash.com/photo-1542401886-65d6c61dece1?w=1600",
+    imageUrl: "https://images.unsplash.com/photo-1549918864-48ac978761a4?w=1600",
     description: "Tassili n'Ajjer is a vast plateau in south-east Algeria at the borders of Libya, Niger and Mali. It is known for its prehistoric rock art and dramatic sandstone formations. A UNESCO World Heritage site, it feels like stepping onto another planet. The area is exceptionally rich in ancient art, with over 15,000 drawings and engravings recording climatic changes, animal migrations, and the evolution of human life on the edge of the Sahara from 6000 BC to the first centuries of the present era.",
     bestTimeToVisit: "October to April",
     duration: "3-5 Days",

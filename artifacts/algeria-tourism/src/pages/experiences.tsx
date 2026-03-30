@@ -6,10 +6,10 @@ import { Clock, Map, Tag } from "lucide-react";
 
 export default function Experiences() {
   const experiences = [
-    { id: 1, title: "Sahara Camel Trek", category: "Adventure", duration: "3 Days", price: "From $300", imageUrl: "https://images.unsplash.com/photo-1550505187-8df7d9b93189?w=800" },
-    { id: 2, title: "Roman Ruins Tour", category: "History", duration: "Full Day", price: "From $120", imageUrl: "https://images.unsplash.com/photo-1638612711652-32aeb41d33bb?w=800" },
+    { id: 1, title: "Sahara Camel Trek", category: "Adventure", duration: "3 Days", price: "From $300", imageUrl: "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800" },
+    { id: 2, title: "Roman Ruins Tour", category: "History", duration: "Full Day", price: "From $120", imageUrl: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800" },
     { id: 3, title: "Casbah Food Walk", category: "Culinary", duration: "4 Hours", price: "From $60", imageUrl: "https://images.unsplash.com/photo-1541832676-9b763b0239ab?w=800" },
-    { id: 4, title: "Oran Coastal Drive", category: "Leisure", duration: "Full Day", price: "From $150", imageUrl: "https://images.unsplash.com/photo-1601614066060-64ebbf7eb3b7?w=800" },
+    { id: 4, title: "Oran Coastal Drive", category: "Leisure", duration: "Full Day", price: "From $150", imageUrl: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=800" },
   ];
 
   return (

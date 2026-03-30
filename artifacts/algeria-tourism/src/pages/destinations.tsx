@@ -15,12 +15,12 @@ export default function Destinations() {
 
   // Fallback data if API is empty
   const allDestinations = destinations.length > 0 ? destinations : [
-    { id: 1, name: "Algiers", region: "Coast", category: "City", imageUrl: "https://images.unsplash.com/photo-1589983944686-2212f719460b?w=800", shortDescription: "The white city on the bay." },
-    { id: 2, name: "Oran", region: "Coast", category: "City", imageUrl: "https://images.unsplash.com/photo-1601614066060-64ebbf7eb3b7?w=800", shortDescription: "Vibrant Mediterranean metropolis." },
-    { id: 3, name: "Constantine", region: "Highlands", category: "History", imageUrl: "https://images.unsplash.com/photo-1638612711652-32aeb41d33bb?w=800", shortDescription: "City of suspended bridges." },
-    { id: 4, name: "Tassili n'Ajjer", region: "Sahara", category: "Nature", imageUrl: "https://images.unsplash.com/photo-1542401886-65d6c61dece1?w=800", shortDescription: "Lunar landscapes and rock art." },
-    { id: 5, name: "Timimoun", region: "Sahara", category: "Oasis", imageUrl: "https://images.unsplash.com/photo-1682687982501-1e5898cb8f4b?w=800", shortDescription: "The red oasis town." },
-    { id: 6, name: "Ghardaïa", region: "Sahara", category: "Culture", imageUrl: "https://images.unsplash.com/photo-1590487508075-81d3945bd30d?w=800", shortDescription: "Unique M'zab valley architecture." },
+    { id: 1, name: "Algiers", region: "Coast", category: "City", imageUrl: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800", shortDescription: "The white city on the bay." },
+    { id: 2, name: "Oran", region: "Coast", category: "City", imageUrl: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=800", shortDescription: "Vibrant Mediterranean metropolis." },
+    { id: 3, name: "Constantine", region: "Highlands", category: "History", imageUrl: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800", shortDescription: "City of suspended bridges." },
+    { id: 4, name: "Tassili n'Ajjer", region: "Sahara", category: "Nature", imageUrl: "https://images.unsplash.com/photo-1549918864-48ac978761a4?w=800", shortDescription: "Lunar landscapes and rock art." },
+    { id: 5, name: "Timimoun", region: "Sahara", category: "Oasis", imageUrl: "https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?w=800", shortDescription: "The red oasis town." },
+    { id: 6, name: "Ghardaïa", region: "Sahara", category: "Culture", imageUrl: "https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?w=800", shortDescription: "Unique M'zab valley architecture." },
   ];
 
   const filteredDestinations = allDestinations.filter((d: any) => {

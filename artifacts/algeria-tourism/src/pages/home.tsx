@@ -11,9 +11,9 @@ export default function Home() {
 
   // Fallback data if API is empty/unseeded
   const displayDestinations = featuredDestinations.length > 0 ? featuredDestinations : [
-    { id: 1, name: "Tassili n'Ajjer", region: "Sahara", imageUrl: "https://images.unsplash.com/photo-1542401886-65d6c61dece1?q=80&w=800&auto=format&fit=crop", shortDescription: "Vast plateau in south-east Algeria, known for prehistoric rock art." },
-    { id: 2, name: "Casbah of Algiers", region: "Coast", imageUrl: "https://images.unsplash.com/photo-1589983944686-2212f719460b?q=80&w=800&auto=format&fit=crop", shortDescription: "Historic citadel holding centuries of Mediterranean history." },
-    { id: 3, name: "Djemila", region: "Highlands", imageUrl: "https://images.unsplash.com/photo-1638612711652-32aeb41d33bb?q=80&w=800&auto=format&fit=crop", shortDescription: "Incredibly well-preserved Roman ruins in a beautiful mountain setting." },
+    { id: 1, name: "Tassili n'Ajjer", region: "Sahara", imageUrl: "https://images.unsplash.com/photo-1549918864-48ac978761a4?q=80&w=800&auto=format&fit=crop", shortDescription: "Vast plateau in south-east Algeria, known for prehistoric rock art." },
+    { id: 2, name: "Casbah of Algiers", region: "Coast", imageUrl: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop", shortDescription: "Historic citadel holding centuries of Mediterranean history." },
+    { id: 3, name: "Djemila", region: "Highlands", imageUrl: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=800&auto=format&fit=crop", shortDescription: "Incredibly well-preserved Roman ruins in a beautiful mountain setting." },
   ];
 
   return (
